@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><!--ant-->
+<project name="CoordyTest build" basedir=".">
+
+	<!-- load user configuration properties -->
+	<property file="user.properties" />
+	
+	<!-- load project configuration properties -->
+	<property file="project.properties" />
+	
+	<!-- ================================= 
+          target: compile_swc      
+         ================================= -->
+	<target 
+		name="compile_swc"
+		description="Compiles a SWC file from a library source path">
+		<echo>Compiling ${library.src.dir}/${library.name}${library.subdir} to =${library.dir}/${library.name}.swc</echo>
+		<delete>
+			<fileset dir="${library.dir}">
+			    <include name="${library.name}.swc"/>
+			</fileset>
+		</delete>
+		<java jar="${flexSDK.dir}/lib/compc.jar" fork="true" failonerror="true">
+			<jvmarg value="-Xmx384m"/>
+			<jvmarg value="-Dsun.io.useCanonCaches=false"/>
+			<arg value="+flexlib=${flexSDK.dir}/frameworks" />
+			<arg value="-source-path+=${library.src.dir}/${library.name}${library.subdir}" />
+			<arg value="-library-path+=${library.dir}/" />
+			<arg value="-target-player=${library.target-player}" />
+			<arg value="-include-sources=${library.src.dir}/${library.name}${library.subdir}" />
+			<arg value="-output=${library.dir}/${library.name}.swc" />
+		</java>
+	</target>
+	
+</project>

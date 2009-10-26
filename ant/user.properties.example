@@ -1,0 +1,12 @@
+# -------------------------------------------------------------------------------------
+# User properties
+# -------------------------------------------------------------------------------------
+# This file should contain the user specific properties (e.g. paths etc) for use by the
+# ant build script. It shouldn't be committed to SVN - instead each user should copy
+# user.properties.example and edit it to match their environment.
+# -------------------------------------------------------------------------------------
+
+################################# USER PROPERTIES ##################################
+   
+# Global-path properties
+flexSDK.dir                     =
