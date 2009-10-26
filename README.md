@@ -12,12 +12,12 @@ Usage
  * Create a project in FDT (or other editor/ IDE?)
  * Open a commandline to the project directory and run:
 
-	git init
-	git remote add template git://github.com/vitch/flash-template.git
-	git pull template master
-	git remote rm template
-	git rm README.md
-	git commit -m "Removed README file from template"
+    git init
+    git remote add template git://github.com/vitch/flash-template.git
+    git pull template master
+    git remote rm template
+    git rm README.md
+    git commit -m "Removed README file from template"
 
  * Continue with your project committing normally to git and
    other remotes to push your work to...
